@@ -1,0 +1,332 @@
+{
+	"info": {
+		"_postman_id": "ef9ab7c7-0287-4c94-806e-98fc4859f874",
+		"name": "splitwise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1659021"
+	},
+	"item": [
+		{
+			"name": "{{url}}/users/register/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"testing\",\r\n    \"email\":\"test@test.com\",\r\n    \"password\":\"12345678\",\r\n    \"username\":\"nitin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/register/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/users/login/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/login/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/users/user_list/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzODE1MTkxLCJpYXQiOjE3MjM4MTQ4OTEsImp0aSI6IjcxOGFiMGVkODhjNTQ2MWJhZGM1ZmM3ZmJkYzg5ZTViIiwidXNlcl9pZCI6MX0.i107WLq6epZoilQ-XV2JzDM7AYxiGE_yGHFPcfKMjEk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzODEyNjkzLCJpYXQiOjE3MjM4MTIzOTMsImp0aSI6IjUxMzVhZTE2Yzk3ODRjNzA4ZGE5NGFkZTEzMWUzNjQxIiwidXNlcl9pZCI6M30.wfeYYsnSmGYjK6FxhtOI-40GaiJPmwTRy2KokTUhxF4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/users/user_list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"user_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/dashboard/expense-group/create/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzODE1MTkxLCJpYXQiOjE3MjM4MTQ4OTEsImp0aSI6IjcxOGFiMGVkODhjNTQ2MWJhZGM1ZmM3ZmJkYzg5ZTViIiwidXNlcl9pZCI6MX0.i107WLq6epZoilQ-XV2JzDM7AYxiGE_yGHFPcfKMjEk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"created_by\": 1,\r\n    \"name\": \"Vacation Trip\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/dashboard/expense-group/create/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"dashboard",
+						"expense-group",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/dashboard/expense-group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzODE1MTkxLCJpYXQiOjE3MjM4MTQ4OTEsImp0aSI6IjcxOGFiMGVkODhjNTQ2MWJhZGM1ZmM3ZmJkYzg5ZTViIiwidXNlcl9pZCI6MX0.i107WLq6epZoilQ-XV2JzDM7AYxiGE_yGHFPcfKMjEk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/dashboard/expense-group",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"dashboard",
+						"expense-group"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/dashboard/user-expense-group/create/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzODE1NTU4LCJpYXQiOjE3MjM4MTUyNTgsImp0aSI6IjU2YjI0NTBhZmE2MTQ4NDc5NGFjMzZjNmRhOTdiZTQyIiwidXNlcl9pZCI6MX0.SBdDUUDQy0wxcP_CW479D9aol_8N5XOfDbaJEoFBfgQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"expense_group\": 1,\r\n    \"user\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/dashboard/user-expense-group/create/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"dashboard",
+						"user-expense-group",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/dashboard/expense-group/1/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzODE3NzQ1LCJpYXQiOjE3MjM4MTc0NDUsImp0aSI6ImE2ZDY3Nzg0OWVlNTRkN2JhNzcwMzIxYzBmOGI5MjE4IiwidXNlcl9pZCI6MX0.FChAZh79oQ0y4eKok06jAm4eGMHNIVrAzLBz-HtV0Lo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/dashboard/expense-group/1/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"dashboard",
+						"expense-group",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/dashboard/expenses/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzODMwNjA5LCJpYXQiOjE3MjM4MzAzMDksImp0aSI6ImRiZjFjMDk2M2Q2NjRiNjI5N2E0NmY0NGMwOWY2ZGFmIiwidXNlcl9pZCI6MX0.lRac1w96tTiQxCCPzJYYtGGp_NHfMjdF1ac3tF0VMKc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//   \"paid_by\": 2,  // ID of the user who paid\r\n//   \"expense_group\": 1,  // ID of the expense group\r\n//   \"amount\": 1200.00,\r\n//   \"reason\": \"Group outing\",\r\n//   \"split_type\": \"PERCENT\",\r\n//   \"shares\": {\r\n//     \"2\": 40.00,  // User ID and the percentage they owe\r\n//     \"3\": 60.00\r\n//   }\r\n// }\r\n\r\n{\r\n  \"paid_by\": 1,  // ID of the user who paid\r\n  \"expense_group\": 1,  // ID of the expense group\r\n  \"amount\": 1250.00,\r\n  \"reason\": \"Dinner and drinks\",\r\n  \"split_type\": \"EXACT\",\r\n  \"shares\": {\r\n    \"2\": 370.00,  // User ID and the exact amount they owe\r\n    \"3\": 880.00\r\n  }\r\n}\r\n\r\n\r\n// {\r\n//   \"paid_by\": 1,  // ID of the user who paid\r\n//   \"expense_group\": 1,  // ID of the expense group\r\n//   \"amount\": 1250.00,\r\n//   \"reason\": \"Dinner and drinks\",\r\n//   \"split_type\": \"EQUAL\",\r\n//   \"shares\": {\r\n//   }\r\n// }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/dashboard/expenses/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"dashboard",
+						"expenses",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/dashboard/owes-by-user/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzODMxMzM5LCJpYXQiOjE3MjM4MzEwMzksImp0aSI6ImFjYzVhZjUyZjRiMzQzNGRiNDg5NWRhMmU5ZDk2OGU3IiwidXNlcl9pZCI6MX0.xN1oon_7BQU7CXSf6deSH66jBoHk0HrxmyLFqJG1Bv4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/dashboard/owes-by-user/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"dashboard",
+						"owes-by-user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/dashboard/owes-to-user/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzODMxMzM5LCJpYXQiOjE3MjM4MzEwMzksImp0aSI6ImFjYzVhZjUyZjRiMzQzNGRiNDg5NWRhMmU5ZDk2OGU3IiwidXNlcl9pZCI6MX0.xN1oon_7BQU7CXSf6deSH66jBoHk0HrxmyLFqJG1Bv4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/dashboard/owes-to-user/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"dashboard",
+						"owes-to-user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
