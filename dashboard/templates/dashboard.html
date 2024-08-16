@@ -1,0 +1,28 @@
+<html>
+    <head></head>
+    <body>
+
+        <h2>Dashboard</h2>
+        <a href="/dashboard/add-expense">Add expense</a>
+        <form method="post" action="{% url 'user_logout' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+        <table>
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Amount</th>
+            </tr>
+            {% for balance in balances %}
+            <tr>
+                <td>{{ balance.user_from }}</td>
+                <td>{{ balance.user_to }}</td>
+                <td>{{ balance.amount }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        
+    </body>
+</html>

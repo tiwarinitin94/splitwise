@@ -1,0 +1,12 @@
+<html>
+    <head></head>
+    <body>
+        {{err_msg}}
+        <h2>Add Expense</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Add Expense</button>
+        </form>
+    </body>
+</html>
