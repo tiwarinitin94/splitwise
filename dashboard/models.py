@@ -4,7 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 from userdetails.models import BaseModel
-
+from django.core.mail import send_mail
 
 
 class ExpenseGroup(BaseModel):
@@ -60,10 +60,18 @@ class Expense(models.Model):
     split_type = models.CharField(max_length=10, choices=SPLIT_TYPE_CHOICES)
     shares = models.JSONField(default=dict)  # For storing percentages or exact amounts
 
-    
-    
+    def _send_expense_email(self):
+        subject = f'New Expense Added: {self.reason}'
+        message = f'You have been added to an expense.\n\nDetails:\nAmount: {self.amount}\nReason: {self.reason}\nDate: {self.date.strftime("%Y-%m-%d %H:%M:%S")}\n\nYou owe: {self.amount}'
 
-   
-
-    def __str__(self):
-        return f"{self.paid_by} paid {self.amount} for {self.reason} in group {self.expense_group}"
+        # Get participants excluding the one who paid
+        participants = Expense.objects.filter(expense_group=self.expense_group).exclude(paid_by=self.paid_by)
+        
+        for participant in participants:
+            send_mail(
+                subject,
+                message,
+                settings.DEFAULT_FROM_EMAIL,
+                [participant.paid_for.email],
+                fail_silently=False,
+            )

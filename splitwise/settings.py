@@ -40,8 +40,18 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'userdetails',
-    'dashboard'
+    'dashboard',
+    'django_crontab',
 ]
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')  # Fetch from environment variable
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')  # Fetch from environment variable
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -93,12 +103,17 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'splitwise',      # Replace with your PostgreSQL database name
         'USER': 'postgres',       # Replace with your PostgreSQL username
-        'PASSWORD': '', # Replace with your PostgreSQL password
+        'PASSWORD': 'db_password', # Replace with your PostgreSQL password
         'HOST': 'localhost',                # Set to 'localhost' or the IP address of your database server
         'PORT': '5432',                     # Default PostgreSQL port
     }
    
 }
+
+
+CRONJOBS = [
+    ('0 0 * * 0', 'dashboard.cron.send_weekly_summary_email'),  # Every Sunday at midnight
+]
 
 
 # Password validation
